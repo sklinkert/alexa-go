@@ -31,11 +31,11 @@ type Response struct {
 
 // ResBody is the actual body of the response
 type ResBody struct {
-	OutputSpeech     *Payload  `json:"outputSpeech,omitempty"`
-	Card             *Payload  `json:"card,omitempty"`
-	Reprompt         *Reprompt `json:"reprompt,omitempty"`
+	OutputSpeech     *Payload     `json:"outputSpeech,omitempty"`
+	Card             *Payload     `json:"card,omitempty"`
+	Reprompt         *Reprompt    `json:"reprompt,omitempty"`
 	Directives       []Directives `json:"directives,omitempty"`
-	ShouldEndSession bool      `json:"shouldEndSession"`
+	ShouldEndSession bool         `json:"shouldEndSession"`
 }
 
 // Reprompt is imformation
@@ -51,10 +51,10 @@ type Directives struct {
 	PlayBehavior  string         `json:"playBehavior,omitempty"`
 	AudioItem     struct {
 		Stream struct {
-			Token                string `json:"token,omitempty"`
-			ExpectedPreviousToken                string `json:"expectedPreviousToken,omitempty"`
-			URL                  string `json:"url,omitempty"`
-			OffsetInMilliseconds int    `json:"offsetInMilliseconds,omitempty"`
+			Token                 string `json:"token,omitempty"`
+			ExpectedPreviousToken string `json:"expectedPreviousToken,omitempty"`
+			URL                   string `json:"url,omitempty"`
+			OffsetInMilliseconds  int    `json:"offsetInMilliseconds,omitempty"`
 		} `json:"stream,omitempty"`
 	} `json:"audioItem,omitempty"`
 }
