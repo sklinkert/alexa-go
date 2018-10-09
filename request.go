@@ -78,6 +78,10 @@ type Request struct {
 	Session Session `json:"session"`
 	Body    ReqBody `json:"request"`
 	Context Context `json:"context"`
+	Request struct {
+		Type  string `json:"type"`
+		Token string `json:"token"`
+	}
 }
 
 // Session represents the Alexa skill session
@@ -109,12 +113,12 @@ type Context struct {
 
 // ReqBody is the actual request information
 type ReqBody struct {
-	Type      string `json:"type"`
-	RequestID string `json:"requestId"`
-	Timestamp string `json:"timestamp"`
-	Locale    string `json:"locale"`
-	Intent    Intent `json:"intent,omitempty"`
-	Reason    string `json:"reason,omitempty"`
+	Type        string `json:"type"`
+	RequestID   string `json:"requestId"`
+	Timestamp   string `json:"timestamp"`
+	Locale      string `json:"locale"`
+	Intent      Intent `json:"intent,omitempty"`
+	Reason      string `json:"reason,omitempty"`
 	DialogState string `json:"dialogState,omitempty"`
 }
 
@@ -126,15 +130,15 @@ type Intent struct {
 
 // Slot is an Alexa skill slot
 type Slot struct {
-	Name  			  string `json:"name"`
-	Value 			  string `json:"value"`
-	Resolutions  Resolutions `json:"resolutions"`
+	Name        string      `json:"name"`
+	Value       string      `json:"value"`
+	Resolutions Resolutions `json:"resolutions"`
 }
 
 type Resolutions struct {
-	ResolutionPerAuthority []struct{
-		Values []struct{
-			Value struct{
+	ResolutionPerAuthority []struct {
+		Values []struct {
+			Value struct {
 				Name string `json:"name"`
 				Id   string `json:"id"`
 			} `json:"value"`
