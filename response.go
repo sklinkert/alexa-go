@@ -52,6 +52,7 @@ type Directives struct {
 	AudioItem     struct {
 		Stream struct {
 			Token                string `json:"token,omitempty"`
+			ExpectedPreviousToken                string `json:"expectedPreviousToken,omitempty"`
 			URL                  string `json:"url,omitempty"`
 			OffsetInMilliseconds int    `json:"offsetInMilliseconds,omitempty"`
 		} `json:"stream,omitempty"`
