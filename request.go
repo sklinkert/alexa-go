@@ -12,6 +12,17 @@ const (
 
 	//StopIntent is the Alexa built-in Stop Intent
 	StopIntent = "AMAZON.StopIntent"
+
+	PauseIntent    = "AMAZON.PauseIntent"
+	ResumeIntent   = "AMAZON.ResumeIntent"
+	NextIntent     = "AMAZON.NextIntent"
+	PreviousIntent = "AMAZON.PreviousIntent"
+	RepeatIntent   = "AMAZON.RepeatIntent"
+
+	AudioPlayerPlaybackStarted        = "AudioPlayer.PlaybackStarted"
+	AudioPlayerPlaybackNearlyFinished = "AudioPlayer.PlaybackNearlyFinished"
+	AudioPlayerPlaybackStopped        = "AudioPlayer.PlaybackStopped"
+	AudioPlayerPlaybackFailed         = "AudioPlayer.PlaybackFailed"
 )
 
 // locales
