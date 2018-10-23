@@ -57,6 +57,21 @@ type Directives struct {
 			OffsetInMilliseconds  int    `json:"offsetInMilliseconds,omitempty"`
 		} `json:"stream,omitempty"`
 	} `json:"audioItem,omitempty"`
+	Metadata struct {
+		Title    string `json:"title"`
+		Subtitle string `json:"subtitle"`
+		Art      struct {
+			Sources []SourcesURL
+		} `json:"art"`
+		BackgroundImage struct {
+			Sources []SourcesURL
+		} `json:"backgroundImage"`
+	} `json:"metadata,omitempty"`
+}
+
+// SourcesURL - url struct for metadata sources
+type SourcesURL struct {
+	URL string `json:"url"`
 }
 
 // UpdatedIntent is to update the Intent
