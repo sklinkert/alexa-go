@@ -79,8 +79,16 @@ type Request struct {
 	Body    ReqBody `json:"request"`
 	Context Context `json:"context"`
 	Request struct {
-		Type  string `json:"type"`
-		Token string `json:"token"`
+		Type                 string `json:"type"`
+		Token                string `json:"token"`
+		OffsetInMilliseconds int    `json:"offsetInMilliseconds"`
+	}
+	Error struct {
+		Type    string `json:"type"`
+		Message string `json:"message"`
+	} `json:"error"`
+	Cause struct {
+		MessageID string `json:"messageID"`
 	}
 }
 
