@@ -116,6 +116,10 @@ type Context struct {
 		Application struct {
 			ApplicationID string `json:"applicationId,omitempty"`
 		} `json:"application,omitempty"`
+		User struct {
+			UserID      string `json:"userId"`
+			AccessToken string `json:"accessToken,omitempty"`
+		} `json:"user"`
 	} `json:"System,omitempty"`
 }
 
