@@ -95,7 +95,7 @@ This package also supports the Alexa AudioPlayer interface.
 
 This is a very simple example:
 
-```
+```go
 	func playTrack(request alexa.Request) alexa.Response {
 		var alexaResponse alexa.Response
 
