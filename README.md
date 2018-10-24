@@ -89,6 +89,51 @@ func main() {
 }
 ```
 
+### AudioPlayer / Music directives
+
+This package also supports the Alexa AudioPlayer interface.
+
+This is a very simple example:
+
+```
+	func playTrack(request alexa.Request) alexa.Response {
+		var alexaResponse alexa.Response
+
+		alexaResponse.Body.OutputSpeech = &alexa.Payload{
+			Type: "PlainText",
+			Text: "Starting music playback.",
+		}
+		alexaResponse.Body.Card = &alexa.Payload{
+			Type:    "Simple",
+			Title:   "MyAlexaAudioPlayer",
+			Context: "Starting music playback.",
+		}
+
+		directives := alexa.Directives{}
+		directives.AudioItem.Stream.URL = "http://example.com/audio.mp3"
+		directives.Type = "AudioPlayer.Play"
+		alexaResponse.Body.ShouldEndSession = true
+		alexaResponse.Version = "1.0"
+		directives.AudioItem.Stream.Token = myAudioFileID
+		directives.AudioItem.Stream.OffsetInMilliseconds = 0 // Needed for pause/resume
+		directives.PlayBehavior = "REPLACE_ALL"
+
+		// Optional artwork
+		directives.AudioItem.Metadata.Title = "My Track"
+		directives.AudioItem.Metadata.Subtitle = "My Album"
+		directives.AudioItem.Metadata.Art.Sources =
+			append(directives.AudioItem.Metadata.Art.Sources,
+				alexa.SourcesURL{URL: "http://example.com/image.png"})
+		directives.AudioItem.Metadata.BackgroundImage.Sources =
+			append(directives.AudioItem.Metadata.BackgroundImage.Sources,
+				alexa.SourcesURL{URL: "http://example.com/image.png"})
+
+		alexaResponse.Body.Directives = append(alexaResponse.Body.Directives, directives)
+
+		return alexaResponse
+	}
+```
+
 ### Credits
 
 Request/Response struct layout influenced by `https://github.com/mikeflynn/go-alexa` which was written before Go was an AWS Lambda native language.
