@@ -79,9 +79,8 @@ type Request struct {
 	Body    ReqBody `json:"request"`
 	Context Context `json:"context"`
 	Request struct {
-		Type                 string `json:"type"`
-		Token                string `json:"token"`
-		OffsetInMilliseconds int    `json:"offsetInMilliseconds"`
+		Type  string `json:"type"`
+		Token string `json:"token"`
 	}
 	Error struct {
 		Type    string `json:"type"`
@@ -125,13 +124,14 @@ type Context struct {
 
 // ReqBody is the actual request information
 type ReqBody struct {
-	Type        string `json:"type"`
-	RequestID   string `json:"requestId"`
-	Timestamp   string `json:"timestamp"`
-	Locale      string `json:"locale"`
-	Intent      Intent `json:"intent,omitempty"`
-	Reason      string `json:"reason,omitempty"`
-	DialogState string `json:"dialogState,omitempty"`
+	Type                 string `json:"type"`
+	RequestID            string `json:"requestId"`
+	Timestamp            string `json:"timestamp"`
+	Locale               string `json:"locale"`
+	Intent               Intent `json:"intent,omitempty"`
+	Reason               string `json:"reason,omitempty"`
+	DialogState          string `json:"dialogState,omitempty"`
+	OffsetInMilliseconds int64  `json:"offsetInMilliseconds"`
 }
 
 // Intent is the Alexa skill intent
