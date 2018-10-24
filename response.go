@@ -56,17 +56,17 @@ type Directives struct {
 			URL                   string `json:"url,omitempty"`
 			OffsetInMilliseconds  int    `json:"offsetInMilliseconds,omitempty"`
 		} `json:"stream,omitempty"`
+		Metadata struct {
+			Title    string `json:"title"`
+			Subtitle string `json:"subtitle"`
+			Art      struct {
+				Sources []SourcesURL `json:"sources"`
+			} `json:"art"`
+			BackgroundImage struct {
+				Sources []SourcesURL `json:"sources"`
+			} `json:"backgroundImage"`
+		} `json:"metadata,omitempty"`
 	} `json:"audioItem,omitempty"`
-	Metadata struct {
-		Title    string `json:"title"`
-		Subtitle string `json:"subtitle"`
-		Art      struct {
-			Sources []SourcesURL
-		} `json:"art"`
-		BackgroundImage struct {
-			Sources []SourcesURL
-		} `json:"backgroundImage"`
-	} `json:"metadata,omitempty"`
 }
 
 // SourcesURL - url struct for metadata sources
