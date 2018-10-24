@@ -54,7 +54,7 @@ type Directives struct {
 			Token                 string `json:"token,omitempty"`
 			ExpectedPreviousToken string `json:"expectedPreviousToken,omitempty"`
 			URL                   string `json:"url,omitempty"`
-			OffsetInMilliseconds  int    `json:"offsetInMilliseconds,omitempty"`
+			OffsetInMilliseconds  int64  `json:"offsetInMilliseconds,omitempty"`
 		} `json:"stream,omitempty"`
 		Metadata struct {
 			Title    string `json:"title"`
