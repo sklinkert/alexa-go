@@ -109,13 +109,6 @@ type Request struct {
 		Type  string `json:"type"`
 		Token string `json:"token"`
 	}
-	Error struct {
-		Type    string `json:"type"`
-		Message string `json:"message"`
-	} `json:"error"`
-	Cause struct {
-		MessageID string `json:"messageID"`
-	}
 }
 
 // Session represents the Alexa skill session
@@ -159,6 +152,13 @@ type ReqBody struct {
 	Reason               string `json:"reason,omitempty"`
 	DialogState          string `json:"dialogState,omitempty"`
 	OffsetInMilliseconds int64  `json:"offsetInMilliseconds"`
+	Error                struct {
+		Type    string `json:"type"`
+		Message string `json:"message"`
+	} `json:"error"`
+	Cause struct {
+		RequestID string `json:"requestID"`
+	} `json:"cause"`
 }
 
 // Intent is the Alexa skill intent
