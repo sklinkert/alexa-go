@@ -79,6 +79,7 @@ const (
 	LocaleJapanese = "ja-JP"
 )
 
+// IsEnglish - Check if locale is set to english
 func IsEnglish(locale string) bool {
 	switch locale {
 	case LocaleAmericanEnglish:
@@ -174,12 +175,13 @@ type Slot struct {
 	Resolutions Resolutions `json:"resolutions"`
 }
 
+// Resolutions - Alexa skill Resolutions
 type Resolutions struct {
 	ResolutionPerAuthority []struct {
 		Values []struct {
 			Value struct {
 				Name string `json:"name"`
-				Id   string `json:"id"`
+				ID   string `json:"id"`
 			} `json:"value"`
 		} `json:"values"`
 	} `json:"resolutionsPerAuthority"`
