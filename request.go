@@ -152,6 +152,7 @@ type ReqBody struct {
 	Intent               Intent `json:"intent,omitempty"`
 	Reason               string `json:"reason,omitempty"`
 	DialogState          string `json:"dialogState,omitempty"`
+	Token                string `json:"token"`
 	OffsetInMilliseconds int64  `json:"offsetInMilliseconds"`
 	Error                struct {
 		Type    string `json:"type"`
