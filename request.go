@@ -13,16 +13,43 @@ const (
 	//StopIntent is the Alexa built-in Stop Intent
 	StopIntent = "AMAZON.StopIntent"
 
-	PauseIntent    = "AMAZON.PauseIntent"
-	ResumeIntent   = "AMAZON.ResumeIntent"
-	NextIntent     = "AMAZON.NextIntent"
+	// PauseIntent - Built-in for pause.
+	PauseIntent = "AMAZON.PauseIntent"
+	// ResumeIntent - Built-in for resume.
+	ResumeIntent = "AMAZON.ResumeIntent"
+	// NextIntent - Built-in for next (e.g. next audio track).
+	NextIntent = "AMAZON.NextIntent"
+	// PreviousIntent - Built-in for previous (e.g. previous audio track).
 	PreviousIntent = "AMAZON.PreviousIntent"
-	RepeatIntent   = "AMAZON.RepeatIntent"
+	// RepeatIntent - Built-in for repeat (e.g. repeat current audio track).
+	RepeatIntent = "AMAZON.RepeatIntent"
 
-	AudioPlayerPlaybackStarted        = "AudioPlayer.PlaybackStarted"
+	// LaunchRequest - Built-in intent for LaunchRequest
+	LaunchRequest = "LaunchRequest"
+	// SystemExceptionEncountered - Built-in intent for unexpected exceptions.
+	SystemExceptionEncountered = "System.ExceptionEncountered"
+	// SessionEndedRequest - Built-in intent for the end of skill session
+	SessionEndedRequest = "SessionEndedRequest"
+
+	// AudioPlayerPlaybackStarted - Playback Started
+	AudioPlayerPlaybackStarted = "AudioPlayer.PlaybackStarted"
+	// AudioPlayerPlaybackNearlyFinished - Playback Nearly Finished
 	AudioPlayerPlaybackNearlyFinished = "AudioPlayer.PlaybackNearlyFinished"
-	AudioPlayerPlaybackStopped        = "AudioPlayer.PlaybackStopped"
-	AudioPlayerPlaybackFailed         = "AudioPlayer.PlaybackFailed"
+	// AudioPlayerPlaybackFinished - Playback Finished
+	AudioPlayerPlaybackFinished = "AudioPlayer.PlaybackFinished"
+	// AudioPlayerPlaybackStopped - Playback Stopped (by user)
+	AudioPlayerPlaybackStopped = "AudioPlayer.PlaybackStopped"
+	// AudioPlayerPlaybackFailed - Playback Failed
+	AudioPlayerPlaybackFailed = "AudioPlayer.PlaybackFailed"
+
+	// PlaybackControllerPlayCommandIssued - Play command issued by user
+	PlaybackControllerPlayCommandIssued = "PlaybackController.PlayCommandIssued"
+	// PlaybackControllerPreviousCommandIssued - Previous command issued by user
+	PlaybackControllerPreviousCommandIssued = "PlaybackController.PreviousCommandIssued"
+	// PlaybackControllerNextCommandIssued - Next command issued by user
+	PlaybackControllerNextCommandIssued = "PlaybackController.NextCommandIssued"
+	// PlaybackControllerPauseCommandIssued - Pause command issued by user
+	PlaybackControllerPauseCommandIssued = "PlaybackController.PauseCommandIssued"
 )
 
 // locales
