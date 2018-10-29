@@ -23,6 +23,20 @@ const (
 	PreviousIntent = "AMAZON.PreviousIntent"
 	// RepeatIntent - Built-in for repeat (e.g. repeat current audio track).
 	RepeatIntent = "AMAZON.RepeatIntent"
+	// ShuffleOnIntent - Built-in for enabling shuffle mode
+	ShuffleOnIntent = "AMAZON.ShuffleOnIntent"
+	// ShuffleOffIntent - Built-in for disabling shuffle mode
+	ShuffleOffIntent = "AMAZON.ShuffleOffIntent"
+	// LoopOnIntent - Built-in for enabling loop mode
+	LoopOnIntent = "AMAZON.LoopOnIntent"
+	// LoopOffIntent - Built-in for disabling loop mode
+	LoopOffIntent = "AMAZON.LoopOffIntent"
+	// StartOverIntent - Built-in for starting over
+	StartOverIntent = "AMAZON.StartOverIntent"
+	// NoIntent - Built-in for "no" response
+	NoIntent = "AMAZON.NoIntent"
+	// YesIntent - Built-in for "yes" response
+	YesIntent = "AMAZON.YesIntent"
 
 	// LaunchRequest - Built-in intent for LaunchRequest
 	LaunchRequest = "LaunchRequest"
